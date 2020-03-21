@@ -170,6 +170,70 @@ img::-moz-selection {
   }
 }
 
+
+#gerenciar {
+  background-color: white;
+}
+
+#gerenciar .navbar-toggler {
+  font-size: 12px;
+  right: 0;
+  padding: 13px;
+  text-transform: uppercase;
+  color: white;
+  border: 0;
+  background-color: #8A0808;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+#gerenciar .navbar-brand {
+  color: #8A0808;
+  font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+#gerenciar .navbar-brand.active, #gerenciar .navbar-brand:active, #gerenciar .navbar-brand:focus, #gerenciar .navbar-brand:hover {
+  color: black;
+}
+
+#gerenciar .navbar-nav .nav-item .nav-link {
+  font-size: 90%;
+  font-weight: 400;
+  padding: 0.75em 0;
+  letter-spacing: 1px;
+  color: #8A0808;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+#gerenciar .navbar-nav .nav-item .nav-link.active, #gerenciar .navbar-nav .nav-item .nav-link:hover {
+  color: black;
+}
+
+@media (min-width: 992px) {
+  #gerenciar {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent;
+  }
+  #gerenciar .navbar-brand {
+    font-size: 1.75em;
+    transition: all 0.3s;
+  }
+  #gerenciar .navbar-nav .nav-item .nav-link {
+    padding: 1.1em 1em !important;
+  }
+  #gerenciar.navbar-shrink {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: white;
+  }
+  #gerenciar.navbar-shrink .navbar-brand {
+    font-size: 1.25em;
+    padding: 12px 0;
+  }
+}
+
 header.masthead {
   text-align: center;
   color: black;
@@ -693,3 +757,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   width: 100%; /* largura da div */
   height:100%; /* altura da div */
  }
+
+#logo{
+  padding: 8px;
+}
