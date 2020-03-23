@@ -19,13 +19,14 @@
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- Custom styles for this template -->
   <link href="css/agency.css" rel="stylesheet">
 
 </head>
 
-<body id="page-top">
+<body id="login-back">
 
   <!-- Navigation -->
   <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -45,12 +46,15 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="index_gerenciar.html">Página Inicial</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index_gerenciar.html"><i class="fa fa-cog" aria-hidden="true"></i></a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   <!-- id de produtos = portifolio -->
-  <section class="bg-light page-section" id="portfolio">
+  <section class=" page-section" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -60,24 +64,26 @@
           <br>
           <br>
           <br>
-          <h2 class="section-heading text-uppercase">Cadastros</h2>
-          <br><br><br>
+          <h1 class="section-heading text-uppercase">Novos Cadastros</h1>
+          <br><br><br><br><br>
         </div>
       </div>
       <div class="row"><!-- AQUI COMEÇA A ROW-->
         <div class="col-md-4 col-sm-6">
              <h2 class="text-center">PRODUTOS QUE POSSUÍMOS: <br><br></h2>
-             <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#modalCadastrarNovo">Cadastrar novo produto</a>
+
+              <a data-toggle="modal" href="#modalCadastrarNovoProduto"><button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Cadastrar Novo Produto</button></a>
+
         </div>
 
         <div class="col-md-4 col-sm-6">
              <h2 class="text-center">OBRAS REALIZADAS: <br><br></h2>
-             <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="">Cadastrar nova obra realizada</a>
+             <a data-toggle="modal" href="#modalCadastrarNovaObra"><button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Cadastrar Nova Obra Realizada</button></a>
         </div>
 
         <div class="col-md-4 col-sm-6">
              <h2 class="text-center">HISTÓRIA DA EMPRESA: <br><br></h2>
-             <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="">Cadastrar novo acontecimento</a>
+              <a data-toggle="modal" href="#modalCadastrarNovoAcontecimento"><button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Cadastrar Novo Acontecimento</button></a>
         </div>
       </div>
      </div>
@@ -85,6 +91,7 @@
 
 
   <!-- Footer -->
+  <br><br><br>
   <footer class="footer">
     <div class="container">
       <div class="row align-items-center">
@@ -123,37 +130,184 @@
       </div>
     </div>
   </footer>
+  </div>
+</div>
 
-  <!--Modal para inserção-->
-<div class="modal fade" data-backdrop="static" id="modalCadastrarNovo" tabindex="-1" role="dialog" aria-labelledby="modalCadastrarNovo" aria-hidden="true">
+
+<!--Modal para inserção de produto-->
+<div class="modal fade" data-backdrop="static" id="modalCadastrarNovoProduto" tabindex="-1" role="dialog" aria-labelledby="modalCadastrarNovo" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>CADASTRO DE PRODUTOS:</h2>
+        <h3 class="modal-title">NOVO PRODUTO</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
-        <div class="form-group">
-            <div class="">
-                <h3>NOME DO PRODUTO:</h3>
-            </div>
-            <div class="">
-                <input type="text"  id="nome_produto"  name="nome_produto" >
-            </div>
-        </div> 
-        <div class="form-group ">
-             <div class="">
-                <h3>DESCRIÇÃO:</h3>
-            </div>
-            <div class="">
-                <input type="text" name="descricao_produto"  id="descricao_produto">
-            </div>
+        
+<form class="was-validated" action="" method="POST" enctype="multipart/form-data">
+
+  <div class="modal-body">
+    <div class="row">
+            
+        <div class="mb-3 col-md-6">
+            <label for="nome_produto">NOME DO PRODUTO: </label>
+            <input type="text" class="form-control" id="nome_produto" name="nome_produto" placeholder="Ex.: Tijolo Maciço" maxlength="50" required>
         </div>
-       </div>
-      </div>
+
+        <div class="mb-3 col-md-6">
+            <label for="imagens">IMAGENS: </label>
+            <input type="file" class="form-control" id="imagens" name="imagens">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="mb-3 col-md-12">
+            <label for="descricao">DESCRIÇÃO:</label>
+            <textarea type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição..." maxlength="150"></textarea>
+        </div>
+
+    </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+
+</form>
+
       </div>
     </div>
   </div>
-</div>
+</div> <!--fim modal de inserção-->
+
+
+<!--Modal para inserção obra realizada-->
+<div class="modal fade" data-backdrop="static" id="modalCadastrarNovaObra" tabindex="-1" role="dialog" aria-labelledby="modalCadastrarNovo" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">NOVAS OBRAS REALIZADAS</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+<form class="was-validated" action="" method="POST" enctype="multipart/form-data">
+
+  <div class="modal-body">
+    <div class="row">
+
+        <div class="mb-3 col-md-5">
+            <label for="imagem_01">IMAGEM OBRA 1: </label>
+            <input type="file" class="form-control" id="imagem_01" name="imagem_01" required>
+        </div>
+
+        <div class="mb-3 col-md-7">
+            <label for="descricao_01">DESCRIÇÃO OBRA 1:</label>
+            <textarea type="text" class="form-control" id="descricao_01" name="descricao_01" placeholder="Descrição..." maxlength="150" required></textarea>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="mb-3 col-md-5">
+            <label for="imagem_02">IMAGEM OBRA 2: </label>
+            <input type="file" class="form-control" id="imagem_02" name="imagem_02">
+        </div>
+
+        <div class="mb-3 col-md-7">
+            <label for="descricao_02">DESCRIÇÃO OBRA 2:</label>
+            <textarea type="text" class="form-control" id="descricao_02" name="descricao_02" placeholder="Descrição..." maxlength="150"></textarea>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="mb-3 col-md-5">
+            <label for="imagem_03">IMAGEM OBRA 3: </label>
+            <input type="file" class="form-control" id="imagem_03" name="imagem_03">
+        </div>
+
+        <div class="mb-3 col-md-7">
+            <label for="descricao_03">DESCRIÇÃO OBRA 3:</label>
+            <textarea type="text" class="form-control" id="descricao_03" name="descricao_03" placeholder="Descrição..." maxlength="150"></textarea>
+        </div>
+
+    </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+
+</form>
+
+      </div>
+    </div>
+  </div>
+</div> <!--fim modal de inserção-->
+
+
+<!--Modal para inserção de acontecimentos-->
+<div class="modal fade" data-backdrop="static" id="modalCadastrarNovoAcontecimento" tabindex="-1" role="dialog" aria-labelledby="modalCadastrarNovoAcontecimento" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">NOVO ACONTECIMENTO</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+<form class="was-validated" action="" method="POST" enctype="multipart/form-data">
+
+  <div class="modal-body">
+    <div class="row">
+            
+        <div class="mb-3 col-md-7">
+            <label for="data_acontecimento">DATA DO ACONTECIMENTO: </label>
+            <input type="text" class="form-control" id="data_acontecimento" name="data_acontecimento" placeholder="Ex.: 23 de Março" maxlength="50" required>
+        </div>
+
+        <div class="mb-3 col-md-5">
+            <label for="imagem_acontecimento">IMAGEM: </label>
+            <input type="file" class="form-control" id="imagem_acontecimento" name="imagem_acontecimento">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="mb-3 col-md-6">
+            <label for="titulo">TITULO: </label>
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ex.: Abertura da Empresa" maxlength="50" required>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label for="descricao_acontecimento">DESCRIÇÃO:</label>
+            <textarea type="text" class="form-control" id="descricao_acontecimento" name="descricao_acontecimento" placeholder="Descrição..." maxlength="200" required></textarea>
+        </div>
+
+    </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+
+</form>
+
+      </div>
+    </div>
+  </div>
+</div> <!--fim modal de inserção-->
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
