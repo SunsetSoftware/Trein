@@ -12,6 +12,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel = "shortcut icon" type = "image/x-icon" href = "img/icone.ico"/>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +27,7 @@
 
 </head>
 
-<body id="login-back">
+<body id="gerenciar-back">
 
   <!-- Navigation -->
   <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -46,8 +47,8 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="index_gerenciar.html">Página Inicial</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="index_gerenciar.html"><i class="fa fa-cog" aria-hidden="true"></i></a>
+          <li class="nav-item" id="conf">
+            <a class="fa fa-cog" data-toggle="modal" href="#modalGerenciar"></a>
           </li>
         </ul>
       </div>
@@ -70,7 +71,7 @@
       </div>
       <div class="row"><!-- AQUI COMEÇA A ROW-->
         <div class="col-md-4 col-sm-6">
-             <h2 class="text-center">PRODUTOS QUE POSSUÍMOS: <br><br></h2>
+             <h2 class="text-center">CADASTRO DE PRODUTOS: <br><br></h2>
 
               <a data-toggle="modal" href="#modalCadastrarNovoProduto"><button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Cadastrar Novo Produto</button></a>
 
@@ -91,12 +92,11 @@
 
 
   <!-- Footer -->
-  <br><br><br>
   <footer class="footer">
-    <div class="container">
+    <div class="container" id="geren-footer">
       <div class="row align-items-center">
         <div class="col-md-4">
-          <span class="copyright">Copyright &copy; Your Website 2019</span>
+          <span class="copyright">Desenvolvido por &copy; Sunset Software</span>
         </div>
         <div class="col-md-4">
           <ul class="list-inline social-buttons">
@@ -120,18 +120,16 @@
         <div class="col-md-4">
           <ul class="list-inline quicklinks">
             <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
+              <a>Política de Privacidade</a>
             </li>
             <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
+              <a>Termos de uso</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
   </footer>
-  </div>
-</div>
 
 
 <!--Modal para inserção de produto-->
@@ -291,6 +289,94 @@
         <div class="mb-3 col-md-6">
             <label for="descricao_acontecimento">DESCRIÇÃO:</label>
             <textarea type="text" class="form-control" id="descricao_acontecimento" name="descricao_acontecimento" placeholder="Descrição..." maxlength="200" required></textarea>
+        </div>
+
+    </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+
+</form>
+
+      </div>
+   </div>
+  </div>
+</div> <!--fim modal de inserção-->
+
+<!--Modal Gerenciar-->
+<div class="modal fade" data-backdrop="static" id="modalGerenciar" tabindex="-1" role="dialog" aria-labelledby="modalGerenciar" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">DADOS DA EMPRESA</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+<form class="was-validated" action="" method="POST" enctype="multipart/form-data">
+
+  <div class="modal-body">
+    <div class="row">
+            
+        <div class="mb-3 col-md-6">
+            <label for="rua">Nome da Rua: </label>
+            <input type="text" class="form-control" id="rua" name="rua" placeholder="Ex.: Rua Getúlio Vargas" maxlength="50" required>
+        </div>
+
+        <div class="mb-1 col-md-2">
+            <label for="numero_rua">Número: </label>
+            <input type="integer" class="form-control" id="numero_rua" name="numero_rua" required>
+        </div>
+        <div class="mb-2 col-md-4">
+            <label for="bairro">Bairro: </label>
+            <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Ex.: Bairro Brasil" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="mb-3 col-md-6">
+            <label for="cep">CEP: </label>
+            <input type="integer" class="form-control" id="cep" name="cep" placeholder="Ex.: 99400-201" maxlength="8" required>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label for="cidade">Cidade:</label>
+            <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Campos Borges" maxlength="200" required>
+        </div>
+
+    </div>
+
+<!--tela de cadastro de dados da empresa: endereço(rua, nº, bairro, cep, telefone, email, email_config[deixar com emanuel], cidade, cnpj, razão social, nome fantasia)-->
+
+    <div class="row">
+            
+        <div class="mb-2 col-md-4">
+            <label for="´cnpj">CNPJ: </label>
+            <input type="integer" class="form-control" id="cnpj" name="cnpj" placeholder="Ex.: 00.000.000/0000-00" maxlength="50" required>
+        </div>
+
+        <div class="mb-2 col-md-4">
+            <label for="razao_social">Razão Social: </label>
+            <input type="text" class="form-control" id="razao_social" name="razao_social" placeholder="Ex.: MCDonalds" maxlength="200" required>
+        </div>
+        <div class="mb-2 col-md-4">
+            <label for="nome_fantasia">Nome Fantasia: </label>
+            <input type="text" class="form-control" id="nome_fantasia" name="nome_fantasia" placeholder="Ex.: Lojas Renner" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="mb-3 col-md-6">
+            <label for="email">E-mail: </label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Ex.: contato@email.com.br" maxlength="200" required>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label for="telefone">Telefone:</label>
+            <input type="integer" class="form-control" id="telefone" name="telefone" placeholder="(54) 9 9999-9999" maxlength="200" required>
         </div>
 
     </div>
