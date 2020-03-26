@@ -238,7 +238,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: black;
-  background-image: url("../img/fundocontainer3.jpg");
+  background-image: url("../img/background/fundocontainer3.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: 100% 100%;
@@ -311,7 +311,7 @@ header.masthead .intro-text .intro-heading {
   height: 100%;
   transition: all ease 0.5s;
   opacity: 0;
-  background: rgba(254, 209, 54, 0.9);
+  background:white;
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
@@ -653,7 +653,7 @@ h3#contact{
   text-shadow: 2px 2px black;
 }
 section#contact {
-  background-image: url("../img/map-image.png");
+  background-image: url("../img/contact/image.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -768,19 +768,20 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   padding: 8px;
 }
 #login-back{
-   background-image: url("../img/fundocontainer.jpg");
+   background-image: url("../img/background/fundocontainer.jpg");
    background-repeat: no-repeat;
    background-size: 100% 100%;
  }
 
 #gerenciar-back{
-  background-image: url("../img/header-bg.jpg");
+  background-image: url("../img/background/header-bg.jpg");
    background-repeat: no-repeat;
    background-size: 100% 100%;
 }
 #login{
   padding-top: 300px;
 }
+
 #container-login{
 
 width: 400px;
