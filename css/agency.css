@@ -809,3 +809,92 @@ margin: 0 auto;
   background-size: 100% 100%;
   padding: 10px;
 }
+
+/*
+#modal-produto{
+  box-sizing: border-box;
+  height: 100;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+
+}
+
+#sliders-verticals{
+  display: flex;
+  justify-content: center;
+}
+
+.thmbnail {
+  display: flex;
+  flex-direction: column;
+  line-height: 0;
+}
+
+.thmbnail li{
+  flex: auto;
+  list-style: none;
+}
+
+.thmbnail li a {
+  display: block;
+}
+
+.thmbnail img {
+  width: 30vmin;
+  height: 30vmin;
+  object-fit: cover;
+  object-position: top;
+}
+
+.slides{
+  overflow: hidden;
+  width: 75vmin;
+  height: 100vmin;
+}
+
+.slides li {
+    width: 75vmin;
+    height: 100vmin;
+    position: absolute;
+    z-index: 1;
+    list-style: none;
+}
+
+.slides img {
+  height: 100vmin;
+  object-fit: cover;
+  object-position: top;
+}
+
+.slides li::target {
+  z-index: 3;
+  -webkit-animation: slide 1s 1;
+  -webkit-appearance: slider-vertical;
+}
+
+@keyframes slides{
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+
+@keyframes hidden {
+  0%{
+    z-index: 2;
+  }
+  100%{
+    z-index: 2;
+  }
+}
+*/
+
+
